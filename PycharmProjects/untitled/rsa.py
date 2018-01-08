@@ -1,15 +1,16 @@
 class rsa():
-    __m = 8 ; __p = 7;__q = 17;__e = 5
+    def __init__(self):
+        self.__m = 8 ; self.__p = 7;self.__q = 17;self.__e = 5
 
-    __n = __p * __q
-    __ola_n = (__p - 1) * (__q - 1)
-    __d = 0
+        self.__n = self.__p * self.__q
+        self.__ola_n = (self.__p - 1) * (self.__q - 1)
+        self.__d = 0
 
-    # 求出公钥
-    while (__d * __e) % __ola_n != (1 % __ola_n):
-        __d += 1
-        print(__d)
-    print("公钥为{0} 明文为{1}".format(__d, __m))
+        # 求出公钥
+        while (self.__d * self.__e) %self.__ola_n != (1 % self.__ola_n):
+            self.__d += 1
+            print(self.__d)
+        print("公钥为{0} 明文为{1}".format(self.__d, self.__m))
 
     def crytogram(self):
         # 加密
